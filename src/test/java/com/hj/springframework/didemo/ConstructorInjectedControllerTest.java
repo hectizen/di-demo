@@ -11,12 +11,12 @@ public class ConstructorInjectedControllerTest {
     private ConstructorInjectedController constructorInjectedController;
     @Before
     public void setUp(){
-        assertEquals(GreetingServiceImpl.HELLO, this.constructorInjectedController.sayHello());
         this.constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
     }
 
     @Test
     public void sayHello(){
+        assertEquals(GreetingServiceImpl.HELLO, constructorInjectedController.sayHello());
         System.out.println(constructorInjectedController.sayHello());
     }
 }
