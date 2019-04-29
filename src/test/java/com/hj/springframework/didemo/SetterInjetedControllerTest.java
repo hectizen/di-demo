@@ -5,6 +5,8 @@ import com.hj.springframework.didemo.service.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class SetterInjetedControllerTest {
     private SetterInjdectedController setterInjdectedController;
 
@@ -16,6 +18,7 @@ public class SetterInjetedControllerTest {
 
     @Test
     public void sayHello(){
+        assertEquals(GreetingServiceImpl.HELLO, this.setterInjdectedController.sayHello());
         System.out.println(this.setterInjdectedController.sayHello());
     }
 }
